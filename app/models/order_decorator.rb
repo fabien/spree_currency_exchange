@@ -32,6 +32,8 @@ Order.class_eval do
       self.currency_value   = self.currency.value
       self.currency_nominal = self.currency.nominal
 
+      # pass along the current currency - accessing it from the reverse association
+      # doesn't work, because the order was not saved yet...
       self.line_items.each { |item| item.update_price!(self.currency) }
     end
   end
