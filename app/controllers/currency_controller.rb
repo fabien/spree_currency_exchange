@@ -11,7 +11,7 @@ class CurrencyController < Spree::BaseController
       unless current_order.completed?
         Currency.init(currency.char_code)
         current_order.currency = currency
-        bool = current_order.save # trigger callbacks
+        bool = current_order.save # triggers callbacks
         current_order.update! if bool
       end
       session[:current_currency] = current_order.currency.char_code

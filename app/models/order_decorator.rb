@@ -31,15 +31,8 @@ Order.class_eval do
       
       self.currency_value   = self.currency.value
       self.currency_nominal = self.currency.nominal
-      
-      self.line_items.each do |item|
-        price = item.price
-        item.base_price = item.variant.base_price
-        item.price = Currency.convert(item.base_price, Currency.base.char_code, self.currency.char_code)
-      end
-      
-      Rails.logger.info "\n\n#{self.adjustment_total} VS #{adjustments.eligible.map(&:amount).sum}\n\n"
-      
+
+      self.line_items.each { |item| item.update_price!(self.currency) }
     end
   end
   

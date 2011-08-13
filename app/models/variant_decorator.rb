@@ -1,4 +1,5 @@
 Variant.class_eval do
+  
   extend CurrencyExchange
   currency_exchange :price
   
