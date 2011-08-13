@@ -1,0 +1,17 @@
+<%= render :partial => 'admin/shared/configuration_menu' %>
+
+<h1><%= t("currency_exchange_settings.title") %></h1>
+<% options = Currency.all.map { |c| ["#{c.char_code} - #{c.name}", c.char_code] } %>
+<%= form_tag(admin_currency_settings_path, :method => :put) do -%>
+  <p>
+    <label><%= t("base_currency") %>:</label>
+    <%= select_tag 'preferences[base_currency]', options_for_select(options, Spree::Currency::Config[:base_currency]) %>
+  </p>
+  <p style="color: red; font-weight: bold">
+    <%= t("currency_exchange_settings.warning") %>
+  </p>
+  <p class="form-buttons">
+    <%= button t('update') %>
+    <%= t("or") %> <%= link_to t("cancel"), admin_currency_settings_url %>
+  </p>
+<% end -%>

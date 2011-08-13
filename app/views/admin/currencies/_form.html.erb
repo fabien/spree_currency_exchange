@@ -1,0 +1,44 @@
+<table>
+  <tr>
+    <td><%= t("currency_name") %>: </td>
+    <td>
+      <%= error_message_on :currency, :name %>
+      <%= f.text_field :name  %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("currency_num_code") %>: </td>
+    <td>
+      <%= error_message_on :currency, :num_code %>
+      <%= f.text_field :num_code  %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("currency_char_code") %>: </td>
+    <td>
+      <%= error_message_on :currency, :char_code %>
+      <%= f.text_field :char_code  %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("currency_nominal") %>: </td>
+    <td>
+      <%= error_message_on :currency, :nominal %>
+      <%= f.text_field :nominal  %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("currency_value") %>: </td>
+    <td>
+      <%= error_message_on :currency, :value %>
+      <%= f.text_field :value  %>
+    </td>
+  </tr>
+  <tr>
+    <td><%= t("currency_date_req") %>: </td>
+    <td>
+      <%= error_message_on :currency, :date_req %>
+      <%= f.spree_date_picker :date_req  %>
+    </td>
+  </tr>
+</table>

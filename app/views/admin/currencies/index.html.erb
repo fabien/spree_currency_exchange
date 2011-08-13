@@ -1,0 +1,38 @@
+<div class="toolbar" data-hook="toolbar">
+  <ul class="actions">
+    <li>
+      <p><%= button_link_to t("add_currency"), new_object_url, :icon => 'add' %></p>
+    </li>
+  </ul>
+  <br class="clear" />
+</div>
+
+<h1><%= t("list_currency") %></h1>
+
+<table class="index">
+  <thead>
+	<tr>
+    <th><%= t("currency_name")%></th>
+    <th><%= t("currency_code")%></th>
+    <th><%= t("currency_value")%></th>
+    <th><%= t("currency_date_req")%></th>
+    <th><%= t("action") %></th>
+	</tr>
+  </thead>
+  <tbody>
+    <% @currencies.each do |currency|%>
+    <tr id="<%= dom_id currency %>">
+      <td width="350px"><% if currency.base? %><strong><%= currency.name %></strong> - <%= t('base_currency').downcase %><% else %><%= currency.name %><% end %></td>
+      <td>
+        <%= currency.char_code %> - <%= currency.num_code %>
+      </td>
+      <td><%= currency.value %></td>
+      <td><%= l(currency.date_req) %></td>
+      <td>
+      	<%= link_to_edit currency %> &nbsp;
+	      <% unless currency.base? %><%= link_to_delete currency %> &nbsp;<% end %>
+      </td>
+    </tr>
+    <% end %>
+  </tbody>
+</table>

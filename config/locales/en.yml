@@ -1,0 +1,20 @@
+---
+en:
+  currency_changed: Currency changed to %{currency}
+  currency_not_changed: Currency not changed
+  base_currency: Base currency
+  add_currency: Add currency
+  new_currency: New currency
+  edit_currency: Edit currency
+  list_currency: Currencies
+  currency_name: Currency
+  currency_code: Code
+  currency_num_code: Numeric Code
+  currency_char_code: Code
+  currency_nominal: Nominal
+  currency_value: Value
+  currency_date_req: Last sync
+  currency_exchange_settings: 
+    title: Currency Settings
+    description: Manage currency settings
+    warning: "You shouldn't change the base currency once your store is active!"
