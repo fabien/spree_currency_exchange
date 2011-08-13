@@ -6,7 +6,6 @@ en:
   add_currency: Add currency
   new_currency: New currency
   edit_currency: Edit currency
-  list_currency: Currencies
   currency_name: Currency
   currency_code: Code
   currency_num_code: Numeric Code
@@ -14,6 +13,12 @@ en:
   currency_nominal: Nominal
   currency_value: Value
   currency_date_req: Last sync
+  manage_currencies:
+    title: Currencies
+    description: Manage currencies
+    synchronize: Synchronize
+    currencies_synchronized: Synchronized currencies
+    currencies_not_synchronized: Currencies not synchronized
   currency_exchange_settings: 
     title: Currency Settings
     description: Manage currency settings

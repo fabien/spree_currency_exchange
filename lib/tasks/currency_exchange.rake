@@ -1,7 +1,4 @@
 # encoding: utf-8
-
-require 'open-uri'
-require 'nokogiri'
 require 'exchange_services'
 
 # add custom rake tasks here

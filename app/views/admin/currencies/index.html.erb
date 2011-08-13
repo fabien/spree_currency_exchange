@@ -1,13 +1,16 @@
 <div class="toolbar" data-hook="toolbar">
   <ul class="actions">
     <li>
+      <p><%= button_link_to t("manage_currencies.synchronize"), synchronize_admin_currencies_url, :icon => 'exclamation' %></p>
+    </li>
+    <li>
       <p><%= button_link_to t("add_currency"), new_object_url, :icon => 'add' %></p>
     </li>
   </ul>
   <br class="clear" />
 </div>
 
-<h1><%= t("list_currency") %></h1>
+<h1><%= t("manage_currencies.title") %></h1>
 
 <table class="index">
   <thead>

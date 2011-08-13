@@ -36,8 +36,7 @@ module SpreeCurrencyExchange
       Dir.glob(File.join(File.dirname(__FILE__), "../app/**/*_decorator*.rb")) do |c|
         Rails.env.production? ? require(c) : load(c)
       end
-      # Ability.register_ability(CurrencyExchangeAbility)
-    
+      
       Spree::BaseController.send(:include, ControllerSupport)
       UserPasswordsController.send(:include, ControllerSupport)
       UserRegistrationsController.send(:include, ControllerSupport)

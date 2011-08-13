@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   namespace :admin do
     resources :currencies do
       collection do
-        get :update_currencies
+        get :synchronize
       end
     end
     resource :currency_settings

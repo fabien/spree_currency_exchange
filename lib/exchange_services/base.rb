@@ -1,3 +1,6 @@
+require 'open-uri'
+require 'nokogiri'
+
 module ExchangeService
   class Base
   
