@@ -10,7 +10,7 @@ class ExchangeService::Google < ExchangeService::Base
         data = JSON.parse(open(url).read.gsub(/lhs:|rhs:|error:|icc:/){ |x| "\"#{x[0..-2]}\":"})
         if data["error"].blank?
           value = BigDecimal(data["rhs"].split(' ')[0])
-          currency.update_attributes(:value => value, :date_req => date_req)
+          currency.update_attributes(:value => currency.nominal/value.to_f, :date_req => date_req)
         end
       end
     end.any?

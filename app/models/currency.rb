@@ -18,8 +18,8 @@ class Currency < ActiveRecord::Base
     
     def get(char_code, base_code = Spree::Currency::Config[:base_currency])
       if currency = Currency.find_by_char_code(char_code.to_s.upcase)
-        Money.add_rate(currency.char_code, base_code, currency.value.to_f)
-        Money.add_rate(base_code, currency.char_code, currency.nominal/currency.value.to_f)
+        Money.add_rate(base_code, currency.char_code, currency.value.to_f)
+        Money.add_rate(currency.char_code, base_code, currency.nominal/currency.value.to_f)
       end
       currency
     end
