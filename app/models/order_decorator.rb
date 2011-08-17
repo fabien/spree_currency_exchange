@@ -16,7 +16,7 @@ Order.class_eval do
       { :id => ship_method.id,
         :shipping_method => ship_method,
         :name => ship_method.name,
-        :cost => Currency.conversion_to_current(cost)
+        :cost => Currency.convert_to_current(cost)
       }
     end.compact.sort_by{|r| r[:cost]}
   end
