@@ -37,6 +37,10 @@ module SpreeCurrencyExchange
         Rails.env.production? ? require(c) : load(c)
       end
       
+      Dir.glob(File.join(File.dirname(__FILE__), "../app/overrides/**/*.rb")) do |c|
+        Rails.env.production? ? require(c) : load(c)
+      end
+      
       Spree::BaseController.send(:include, ControllerSupport)
       UserPasswordsController.send(:include, ControllerSupport)
       UserRegistrationsController.send(:include, ControllerSupport)

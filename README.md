@@ -5,7 +5,7 @@ The Spree Currency Exchange extension enables multiple currencies.
 ## Installation
 
 1. Add the following to your Gemfile
-  gem "spree\_currency\_exchange"
+  gem "spree\_currency\_exchange", :git => 'git://github.com/fabien/spree\_currency\_exchange.git'
 
 2. run `bundle install`
 
