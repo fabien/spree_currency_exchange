@@ -45,6 +45,8 @@ module SpreeCurrencyExchange
       UserPasswordsController.send(:include, ControllerSupport)
       UserRegistrationsController.send(:include, ControllerSupport)
       UserSessionsController.send(:include, ControllerSupport)
+      
+      Currency.init(Spree::Currency::Config[:base_currency], Spree::Currency::Config[:base_currency])
     end
 
     config.to_prepare &method(:activate).to_proc
