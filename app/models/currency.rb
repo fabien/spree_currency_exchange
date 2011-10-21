@@ -14,6 +14,10 @@ class Currency < ActiveRecord::Base
     self.char_code == self.class.base.char_code
   end
   
+  def format_info
+    I18n.t('number.currency.format', :locale => "currency_#{char_code}")
+  end
+  
   class << self
     
     def get(char_code, base_code = Spree::Currency::Config[:base_currency])
