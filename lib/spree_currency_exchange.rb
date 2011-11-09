@@ -15,8 +15,8 @@ module SpreeCurrencyExchange
           Currency.init(session[:current_currency] || base_currency, base_currency)
         end
 
-        Rails.logger.info " [ Currency Base ] : #{Currency.base.char_code}"
-        Rails.logger.info " [ Currency Current ] : #{Currency.current.char_code}"
+        Rails.logger.debug " [ Currency Base ] : #{Currency.base.char_code}"
+        Rails.logger.debug " [ Currency Current ] : #{Currency.current.char_code}"
       end
     end
     
