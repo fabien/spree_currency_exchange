@@ -22,7 +22,7 @@ module SpreeCurrencyExchange
     
     def self.included(receiver)
       receiver.send :include, InstanceMethods
-      receiver.send :before_filter, 'init_currencies'
+      receiver.send :prepend_before_filter, 'init_currencies'
     end
 
   end
