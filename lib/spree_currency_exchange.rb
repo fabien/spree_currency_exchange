@@ -46,7 +46,7 @@ module SpreeCurrencyExchange
       UserRegistrationsController.send(:include, ControllerSupport)
       UserSessionsController.send(:include, ControllerSupport)
       
-      Currency.init(Spree::Currency::Config[:base_currency], Spree::Currency::Config[:base_currency])
+      Currency.init(Spree::Currency::Config[:base_currency], Spree::Currency::Config[:base_currency]) if Currency.table_exists?
     end
 
     config.to_prepare &method(:activate).to_proc
