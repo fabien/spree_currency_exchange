@@ -50,11 +50,14 @@ class Currency < ActiveRecord::Base
     # Conversion
     
     def convert(value, from, to)
-      (Money.new(value.to_f * 10000, from).exchange_to(to).to_f / 100).round(2)
+      return value if from == to
+      converted = Money.new(value.to_f * 10000, from).exchange_to(to).to_f / 100
+      value.is_a?(BigDecimal) ? BigDecimal.new(converted.to_s) : converted 
     end
     
     def convert_by_rate(value, rate)
-      (value.to_f * rate.to_f).round(2)
+      converted = value.to_f * rate.to_f
+      value.is_a?(BigDecimal) ? BigDecimal.new(converted.to_s) : converted 
     end
     
     def convert_to_current(value)

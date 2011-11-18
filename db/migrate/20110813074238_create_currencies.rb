@@ -5,8 +5,8 @@ class CreateCurrencies < ActiveRecord::Migration
       t.string    :char_code, :null => false
       t.string    :name, :null => false
       t.datetime  :date_req, :null => false
-      t.float     :nominal, :null => false, :default => 1
-      t.float     :value, :null => false
+      t.decimal   :nominal, :precision => 8, :scale => 2, :null => false, :default => 1.0
+      t.decimal   :value,   :precision => 8, :scale => 2, :null => false
       t.timestamps
     end
   end
